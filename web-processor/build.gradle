@@ -1,0 +1,38 @@
+apply plugin: 'java-library'
+
+ext {
+    bintrayName = 'web-processor'
+    artifact = bintrayName
+    libraryName = 'Android Web Intercept Annotation Processor'
+    libraryDescription = 'The is android webview url intercept Annotation Processor'
+    libraryVersion = web_processor_version
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.google.auto.service:auto-service:1.0-rc2'
+    implementation 'com.squareup:javapoet:1.11.1'
+    implementation 'com.sltpaya.open:web-annotation:1.1.1'
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"
+
+//指定编译的编码
+tasks.withType(JavaCompile){
+    options.encoding = "UTF-8"
+}
+
+//如果生成javadoc出现编码问题添加
+javadoc {
+    failOnError false
+    options {
+        encoding "UTF-8"
+        charSet 'UTF-8'
+        author true
+        version true
+    }
+}
+
+apply from: "https://raw.githubusercontent.com/sltpaya/save_repository/master/install1.gradle"
+apply from: "https://raw.githubusercontent.com/sltpaya/save_repository/master/upload1.gradle"

@@ -1,0 +1,1 @@
+include ':app', ':web-intercept', ':web-annotation', ':web-processor'

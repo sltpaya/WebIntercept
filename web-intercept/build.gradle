@@ -1,0 +1,46 @@
+apply plugin: 'com.android.library'
+
+ext {
+    bintrayName = 'web-intercept'
+    artifact = bintrayName
+    libraryName = 'Android Web Intercept'
+    libraryDescription = 'The is android webview url intercept'
+    libraryVersion = web_intercept_version
+}
+
+android {
+    compileSdkVersion 27
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    api 'com.sltpaya.open:web-annotation:1.1.1'
+    //implementation project(':web-annotation')
+}
+
+tasks.withType(Javadoc) {
+    options.encoding = 'UTF-8'
+}
+
+
+
+apply from: "https://raw.githubusercontent.com/sltpaya/save_repository/master/install1.gradle"
+apply from: "https://raw.githubusercontent.com/sltpaya/save_repository/master/upload1.gradle"
