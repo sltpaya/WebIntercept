@@ -2,16 +2,13 @@ package com.sltpaya.webintercept;
 
 import android.net.Uri;
 import android.support.annotation.NonNull;
-
 import com.sltpaya.open.web.intercept.WebHandler;
 import com.sltpaya.open.web.intercept.WebIntercept;
 import com.sltpaya.open.web.intercept.WebInterceptResult;
 import com.sltpaya.web.annoation.Intercept;
 import com.sltpaya.web.annoation.InterceptGroup;
-import com.sltpaya.web.annoation.PathMode;
 import com.sltpaya.web.annoation.MatchMode;
-
-import java.util.regex.Pattern;
+import com.sltpaya.web.annoation.PathMode;
 
 @Intercept(
         path = {
@@ -23,13 +20,14 @@ import java.util.regex.Pattern;
         priority = 2
 )
 @InterceptGroup(
-        name = "SkinInterceptImpl"
+        name = "SkinsInterceptImpl"
 )
-public class EventCCHandler implements WebHandler {
+public class SkinToolBarHandler implements WebHandler {
 
     @NonNull
     @Override
     public WebInterceptResult handle(WebIntercept intercept, Uri uri) {
+        Skin.getInstance().setName("skin_iii");
         return WebInterceptResult.noAction();
     }
 

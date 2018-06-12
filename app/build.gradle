@@ -31,6 +31,7 @@ dependencies {
 
     implementation project(':web-intercept')
 
-    //annotationProcessor project(':web-processor')
+    annotationProcessor project(':web-processor')
     //compile project(path: ':web-annotation')
+    compile project(path: ':web-annotation')
 }

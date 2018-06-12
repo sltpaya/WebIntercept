@@ -32,7 +32,7 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:27.1.1'
-    api 'com.sltpaya.open:web-annotation:1.1.1'
+    api 'com.sltpaya.open:web-annotation:1.1.2'
     //implementation project(':web-annotation')
 }
 

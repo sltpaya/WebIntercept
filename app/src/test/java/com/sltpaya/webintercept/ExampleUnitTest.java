@@ -1,5 +1,8 @@
 package com.sltpaya.webintercept;
 
+import com.sltpaya.open.web.intercept.SkinInterceptImpl;
+import com.sltpaya.web.annoation.Uri;
+
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
